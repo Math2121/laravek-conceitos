@@ -27,8 +27,12 @@ class ContactController extends Controller
         //
 
         $contact = Contact::create($request->all());
+        
         FacadesNotification::route('mail',config('mail.from.address'))->notify(new NewContact($contact));
+
+
         dd($contact);
+
     }
 
   
