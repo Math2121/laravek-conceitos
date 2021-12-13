@@ -45,7 +45,9 @@ class NewContact extends Notification implements ShouldQueue
         return (new MailMessage)
             ->line('The introduction to the notification.')
             ->line($this->contact->email)
+            
             ->line($this->contact->name)
+
             ->line($this->contact->message);
     }
 
